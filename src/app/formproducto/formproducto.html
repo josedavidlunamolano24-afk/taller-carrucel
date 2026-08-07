@@ -1,0 +1,113 @@
+<div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10 mt-8">
+
+    <h1 class="text-5xl font-bold text-center text-indigo-600 mb-10">
+        Registro de Producto
+    </h1>
+
+    <form (ngSubmit)="guardarProducto()" class="space-y-6">
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Código Producto
+            </label>
+
+            <input
+                type="text"
+                placeholder="Ingrese el código del producto"
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Descripción
+            </label>
+
+            <input
+                type="text"
+                [(ngModel)]="nuevoProducto.descripcion"
+                name="descripcion"
+                placeholder="Ingrese la descripción"
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Código Proveedor
+            </label>
+
+            <select
+    [(ngModel)]="nuevoProducto.cod_proveedor"
+    name="cod_proveedor"
+    class="w-full border border-gray-300 rounded-xl p-4">
+
+    <option value="">Seleccione un proveedor</option>
+
+    <option
+        *ngFor="let proveedor of proveedores"
+        [value]="proveedor.cod_proveedor">
+
+        {{ proveedor.cod_proveedor }}
+
+    </option>
+
+</select>
+
+           </div>
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Precio Costo
+            </label>
+
+            <input
+                type="number"
+                [(ngModel)]="nuevoProducto.precio_costo"
+                name="precio_costo"
+                placeholder="Ingrese el precio costo"
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Precio Venta
+            </label>
+
+            <input
+                type="number"
+                [(ngModel)]="nuevoProducto.precio_venta"
+                name="precio_venta"
+                placeholder="Ingrese el precio de venta"
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <div>
+            <label class="block text-lg font-semibold mb-2">
+                Foto
+            </label>
+
+            <input
+                type="file"
+                [(ngModel)]="nuevoProducto.foto"
+                name="foto"
+                class="w-full border border-gray-300 rounded-xl p-4">
+        </div>
+
+        <div class="flex justify-end gap-4 pt-6">
+
+            <button
+                type="reset"
+                class="bg-gray-300 hover:bg-gray-400 px-8 py-3 rounded-xl">
+                Limpiar
+            </button>
+
+            <button
+                type="submit"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl">
+                Registrar Producto
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
