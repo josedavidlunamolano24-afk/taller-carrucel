@@ -7,6 +7,7 @@ import { DetalleFactura } from './detalle-factura/detalle-factura';
 import { Factura } from './factura/factura';
 import { Formproveedor } from './formproveedor/formproveedor';
 import { Carrusel } from './carrusel/carrusel';
+import { Fromcliente } from './fromcliente/fromcliente';
 
 export const routes: Routes = [
 
@@ -55,9 +56,5 @@ export const routes: Routes = [
     path: 'formproveedor',
     component: Formproveedor
   },
-  {
-    path:'formproveedor/:id',
-    component:Formproveedor
-  }
 
 ];
