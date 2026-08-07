@@ -4,6 +4,14 @@
         DETALLE DE FACTURA
     </h2>
 
+    <form (ngSubmit)="guardarfactura()">
+    <input placeholder="Marca" name="marca"
+     [(ngModel)]="nuevaBicicleta.marca" >
+    <input placeholder="precio" name="precio" 
+    [(ngModel)]="nuevaBicicleta.precio" >
+    <button type="submit">Guardar</button>
+</form>
+
     <table class="w-full border border-gray-200 rounded-lg overflow-hidden">
 
         <thead class="bg-indigo-100 text-indigo-600">
@@ -24,6 +32,7 @@
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
+
             </tr>
                 <tr class="hover:bg-gray-50">
                 <td class="p-3 border"></td>
@@ -31,6 +40,7 @@
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
+
             </tr>
                 <tr class="hover:bg-gray-50">
                 <td class="p-3 border"></td>
@@ -38,6 +48,7 @@
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
+
             </tr>
                 <tr class="hover:bg-gray-50">
                 <td class="p-3 border"></td>
@@ -45,6 +56,7 @@
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
+
             </tr>
                 <tr class="hover:bg-gray-50">
                 <td class="p-3 border"></td>
@@ -52,6 +64,7 @@
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
                 <td class="p-3 border"></td>
+                
             </tr>
                 <tr class="hover:bg-gray-50">
                 <td class="p-3 border"></td>
