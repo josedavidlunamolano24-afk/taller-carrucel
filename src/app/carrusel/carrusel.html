@@ -1,0 +1,55 @@
+<section class="contenedor">
+
+  <h2>Carrusel principal</h2>
+
+  <div class="carrusel">
+
+    <button class="flecha izquierda" (click)="anterior()">
+      ‹
+    </button>
+
+    <div class="carrusel-window">
+      <div class="cards" [style.transform]="getTransform()">
+
+        <div class="card" *ngFor="let item of tarjetasCarrusel">
+          <img [src]="item.imagen" [alt]="item.titulo">
+          <div class="fondo"></div>
+          <div class="contenido">
+            <h3>{{item.titulo}}</h3>
+            <p>{{item.descripcion}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="flecha derecha" (click)="siguiente()">
+      ›
+    </button>
+
+  </div>
+
+  <!-- Indicadores de puntos (ahora genera solo los puntos de posiciones existentes) -->
+  <div class="puntos">
+    <span 
+      *ngFor="let p of totalPuntos; let i = index"
+      [class.activo]="i === slideActual"
+      (click)="irAlSlide(i)">
+    </span>
+  </div>
+
+  <h2>Resumen general</h2>
+
+  <div class="resumen">
+    <div class="tarjeta-resumen" *ngFor="let item of resumen">
+      <div class="icono-resumen">{{item.icono}}</div>
+      <div>
+        <h3>{{item.titulo}}</h3>
+        <strong>{{item.valor}}</strong>
+        <p>{{item.texto}}</p>
+      </div>
+      <span class="porcentaje">▲ {{item.porcentaje}}</span>
+    </div>
+  </div>
+
+</section>
