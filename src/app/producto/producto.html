@@ -1,2 +1,64 @@
-<h1>PRODUCTO</h1>
+<div class="mx-5 mt-5 bg-white shadow-md rounded-lg p-6 overflow-x-auto">
 
+    <h2 class="text-2xl font-bold text-indigo-600 mb-6">
+        PRODUCTO
+    </h2>
+
+    <table class="w-full table-auto border border-gray-200 rounded-lg overflow-hidden ">
+
+        <thead class="bg-indigo-100 text-indigo-600">
+            <tr>
+                <th class="p-3 border text-center">CODIGO PRODUCTO</th>
+                <th class="p-3 border text-center">DESCRIPCION</th>
+                <th class="p-3 border text-center">CODIGO PROVEEDOR</th>
+                <th class="p-3 border text-center">PRECIO COSTO</th>
+                <th class="p-3 border text-center">PRECIO VENTA</th>
+                <th class="p-3 border text-center">FOTO</th>
+                <th class="p-3 border text-center">ACCIONES</th>            </tr>
+        </thead>
+
+     <tbody>
+        <tr *ngFor="let producto of productos" class="hover:bg-gray-50">
+
+        <td class="p-3 border text-center">
+            {{ producto.codigo_producto }}</td>
+
+        <td class="p-3 border text-center">
+            {{ producto.descripcion }}</td>
+
+        <td class="p-3 border text-center">
+            {{ producto.cod_proveedor }}</td>
+
+        <td class="p-3 border text-center">
+            {{ producto.precio_costo }}</td>
+
+        <td class="p-3 border text-center">
+            {{ producto.precio_venta }}</td>
+
+        <td class="p-3 border text-center">
+            <img [src]="producto.foto"
+                 alt="Producto"
+                 class="w-16 h-16 object-cover rounded-md mx-auto">
+        </td>
+
+        <td class="p-3 border text-center">
+            <div class="flex justify-center gap-2">
+
+                <button (click)="llevarActualizar(producto.codigo_producto)"
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded-lg">
+                    Actualizar
+                </button>
+
+                <button (click)="eliminar(producto.codigo_producto)"
+                    class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg">
+                    Eliminar
+                </button>
+
+             </div>
+        </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
