@@ -1,0 +1,57 @@
+<div class="admin-panel">
+  <h2>Administrador del Carrusel</h2>
+
+  <!-- FORMULARIO CRUD -->
+  <div class="form-container">
+    <h3>{{ editando ? 'Editar Tarjeta' : 'Agregar Nueva Tarjeta' }}</h3>
+
+    <div class="field">
+      <label>Título:</label>
+      <input type="text" [(ngModel)]="formTarjeta.titulo" placeholder="Ej. Cera Express">
+    </div>
+
+    <div class="field">
+      <label>Descripción:</label>
+      <textarea [(ngModel)]="formTarjeta.descripcion" placeholder="Escribe la descripción corta..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Ruta de la imagen:</label>
+      <input type="text" [(ngModel)]="formTarjeta.imagen" placeholder="Ej. carrusel/brillo.jpg">
+    </div>
+
+    <div class="acciones">
+      <button class="btn btn-primary" (click)="guardar()">
+        {{ editando ? 'Actualizar Tarjeta' : 'Guardar en Carrusel' }}
+      </button>
+      <button class="btn btn-secondary" *ngIf="editando" (click)="limpiarFormulario()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+  <!-- TABLA DE REGISTROS -->
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tarjetas">
+        <td>
+          <img [src]="item.imagen" [alt]="item.titulo" class="thumb">
+        </td>
+        <td><strong>{{ item.titulo }}</strong></td>
+        <td>{{ item.descripcion }}</td>
+        <td>
+          <button class="btn-action edit" (click)="seleccionarParaEditar(item)">✏️</button>
+          <button class="btn-action delete" (click)="eliminar(item.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
