@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cliente',
-  imports: [CommonModule],
+  imports: [CommonModule ],
   templateUrl: './cliente.html',
   styleUrl: './cliente.css',
 })
