@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router,RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-proveedor',
-  imports: [ CommonModule],
+  imports: [ CommonModule,RouterLink],
   templateUrl: './proveedor.html',
   styleUrl: './proveedor.css',
 })
-export class Proveedor {}
+export class Proveedor {
+idSeleccionado: number | null = null;
+
+  constructor(private router:Router){}
+
+ actualizarProveedor() {
+  this.router.navigate(['/formproveedor', this.idSeleccionado]);
+}
+
+eliminarProveedor() {
+} 
+}

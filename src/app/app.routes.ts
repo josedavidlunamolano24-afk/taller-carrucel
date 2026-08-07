@@ -56,10 +56,5 @@ export const routes: Routes = [
     path: 'formproveedor',
     component: Formproveedor
   },
-  
-  {
-    path: 'fromcliente',
-     component: Fromcliente,
-  }
 
 ];
