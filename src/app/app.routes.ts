@@ -8,6 +8,7 @@ import { Factura } from './factura/factura';
 import { Formproveedor } from './formproveedor/formproveedor';
 import { Carrusel } from './carrusel/carrusel';
 import { Fromcliente } from './fromcliente/fromcliente';
+import { Actualizarcliente } from './actualizarcliente/actualizarcliente';
 
 export const routes: Routes = [
 
@@ -56,6 +57,9 @@ export const routes: Routes = [
     path: 'formproveedor',
     component: Formproveedor
   },
-  { path: 'fromcliente', component: Fromcliente },  
+  { path: 'fromcliente', component: Fromcliente }, 
+  {
+    path: `actualizarcliente/:cod_cliente`, component:Actualizarcliente
+  } 
 
 ];
