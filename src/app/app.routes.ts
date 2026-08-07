@@ -54,6 +54,10 @@ export const routes: Routes = [
   {
     path: 'formproveedor',
     component: Formproveedor
+  },
+  {
+    path:'formproveedor/:id',
+    component:Formproveedor
   }
 
 ];
