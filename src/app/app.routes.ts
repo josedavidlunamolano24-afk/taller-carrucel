@@ -66,4 +66,4 @@ export const routes: Routes = [
   { path: 'fromcliente',
      component: Fromcliente },  
 
-];
+]; 
