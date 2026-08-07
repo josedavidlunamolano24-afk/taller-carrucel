@@ -24,7 +24,6 @@
     </div>
 
     <button class="flecha derecha" (click)="siguiente()">
-      ›
     </button>
 
   </div>
@@ -36,20 +35,6 @@
       [class.activo]="i === slideActual"
       (click)="irAlSlide(i)">
     </span>
-  </div>
-
-  <h2>Resumen general</h2>
-
-  <div class="resumen">
-    <div class="tarjeta-resumen" *ngFor="let item of resumen">
-      <div class="icono-resumen">{{item.icono}}</div>
-      <div>
-        <h3>{{item.titulo}}</h3>
-        <strong>{{item.valor}}</strong>
-        <p>{{item.texto}}</p>
-      </div>
-      <span class="porcentaje">▲ {{item.porcentaje}}</span>
-    </div>
   </div>
 
 </section>
