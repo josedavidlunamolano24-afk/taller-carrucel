@@ -10,6 +10,7 @@ import { Carrusel } from './carrusel/carrusel';
 import { Formproducto } from './formproducto/formproducto';
 import { Fromcliente } from './fromcliente/fromcliente';
 import { Actualizarcliente } from './actualizarcliente/actualizarcliente';
+import { Actualizarproveedor } from './actualizarproveedor/actualizarproveedor';
 
 
 export const routes: Routes = [
@@ -56,8 +57,8 @@ export const routes: Routes = [
   },
 
   {
-    path: 'formproveedor',
-    component: Formproveedor
+    path: `formproveedor/:id`,
+    component:Formproveedor
   },
   {
     path: 'formproducto',
@@ -70,5 +71,9 @@ export const routes: Routes = [
   {
     path: 'actualizarcliente/:cod_cliente',
     component: Actualizarcliente
+  },
+  {
+    path: 'Actualizarproveedor', component: Actualizarproveedor
   }
 ];
+
