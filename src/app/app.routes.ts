@@ -71,6 +71,4 @@ export const routes: Routes = [
     path: 'actualizarcliente/:cod_cliente',
     component: Actualizarcliente
   }
-
-
 ];
