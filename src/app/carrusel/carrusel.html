@@ -7,7 +7,7 @@
     <button class="flecha izquierda" (click)="anterior()">
       ‹
     </button>
-
+    
     <div class="carrusel-window">
       <div class="cards" [style.transform]="getTransform()">
 
@@ -24,11 +24,12 @@
     </div>
 
     <button class="flecha derecha" (click)="siguiente()">
+      ›
     </button>
 
   </div>
 
-  <!-- Indicadores de puntos (ahora genera solo los puntos de posiciones existentes) -->
+  <!-- Indicadores de puntos -->
   <div class="puntos">
     <span 
       *ngFor="let p of totalPuntos; let i = index"
