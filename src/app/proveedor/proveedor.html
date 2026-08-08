@@ -1,6 +1,6 @@
 <div class="mx-5 mt-5 bg-white shadow-md rounded-lg p-6 overflow-x-auto">
 
-  <h2 class="text-2xl font-bold text-indigo-600 mb-6">Gestión de Proveedores</h2>
+  <h2 class="text-2xl font-bold text-indigo-600 mb-6">Proveedores</h2>
 
   <table class="w-full table-auto border border-gray-200 rounded-lg overflow-hidden">
     <thead class="bg-indigo-100 text-indigo-600">
@@ -9,37 +9,39 @@
         <th class="p-3 border">Nombre</th>
         <th class="p-3 border">Teléfono</th>
         <th class="p-3 border">Dirección</th>
+        <th class="p-3 border">opciones</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let p of proveedores" class="h-12 hover:bg-gray-50">
-        <td class="border p-3 text-center">{{ p.id }}</td>
+        <td class="border p-3 text-center">{{ p.codigo_proveedor }}</td>
         <td class="border p-3">{{ p.nombre_proveedor }}</td>
         <td class="border p-3">{{ p.telefono }}</td>
         <td class="border p-3">{{ p.direccion }}</td>
+
+        <td class="border p-3">
+          <div class="flex flex-row justify-center gap-4 mt-6">
+            <button
+              type="button"
+              (click)=" actualizarProveedor(p.codigo_proveedor)"
+              routerLink="/actualizarproveedor"
+              class="px-4 py-2 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition">
+              Actualizar
+            </button>
+
+            <button
+              type="button"
+              (click)="eliminarProveedor(p.codigo_proveedor)"
+              class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+              Eliminar
+            </button>
+          </div>
+        </td>
       </tr>
-    </tbody>
+  
   </table>
 
-  <div class="flex flex-row justify-center gap-4 mt-6">
-    <button
-      routerLink="/formproveedor"
-      class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">
-      Registrar proveedor
-    </button>
-
-    <button
-      routerLink="/actualizarproveedor"
-      class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">
-      Actualizar proveedor
-    </button>
-
-    <button
-      (click)="eliminarProveedor()"
-      class="px-6 py-3 rounded-lg bg-red-600 text-white hover:bg-red-700 transition font-medium">
-      Eliminar proveedor
-    </button>
-  </div>
+  
 
 </div>
