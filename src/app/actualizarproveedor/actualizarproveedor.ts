@@ -9,8 +9,8 @@ import { ActivatedRoute,Router } from '@angular/router';
   templateUrl: './actualizarproveedor.html',
   styleUrl: './actualizarproveedor.css',
 })
-export class Actualizarproveedor implements OnInit{
-  id : number = 0;
+export class Actualizarproveedor{
+  codigo_proveedor: number = 0;
 
   proveedor={
     nombre_proveedor:'',
@@ -23,11 +23,11 @@ export class Actualizarproveedor implements OnInit{
     private route : ActivatedRoute) {}
 
     ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
+    this.codigo_proveedor= this.route.snapshot.params['codigo_proveedor'];
     
     }
     actualizarproveedor(){
-      this.http.patch("https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/"+this.id, this.proveedor,{
+      this.http.patch("https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/proveedor?codigo_proveedor=eq."+this.codigo_proveedor, this.proveedor,{
         headers: {
           apikey: "sb_publishable_qnp1xzi89N_0c2Yex-wbwQ_ddmCG28x",
           Authorization: "Bearer sb_publishable_qnp1xzi89N_0c2Yex-wbwQ_ddmCG28x",
