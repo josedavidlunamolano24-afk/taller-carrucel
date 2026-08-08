@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
  }
 
  export interface Proveedor{
-  cod_proveedor: number
+  codigo_proveedor: number
  }
 
 @Component({
@@ -39,7 +39,7 @@ export class Formproducto {
 
     traerProveedores(){
 
-    this.http.get<Proveedor[]> ('https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/proveedor',
+    this.http.get<Proveedor[]> ('https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/proveedor?select=codigo_proveedor',
       {     
       headers: {
           apikey:'sb_publishable_qnp1xzi89N_0c2Yex-wbwQ_ddmCG28x',
@@ -49,7 +49,8 @@ export class Formproducto {
         }
   }).subscribe({
     next:(respuesta)=>{
-      console.log(respuesta);
+      console.log("PROVEEDORES:", respuesta);
+      console.log("TOTAL:", respuesta.length);
       this.proveedores = respuesta;
     }
   });

@@ -16,8 +16,8 @@ interface Clientes {
 
 @Component({
   selector: 'app-cliente',
-  imports: [CommonModule, RouterLink],
-  templateUrl: './cliente.html',
+  imports: [CommonModule]
+,  templateUrl: './cliente.html',
   styleUrl: './cliente.css',
 })
 export class Cliente {

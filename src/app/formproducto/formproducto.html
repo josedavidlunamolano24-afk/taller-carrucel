@@ -8,17 +8,6 @@
 
         <div>
             <label class="block text-lg font-semibold mb-2">
-                Código Producto
-            </label>
-
-            <input
-                type="text"
-                placeholder="Ingrese el código del producto"
-                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        </div>
-
-        <div>
-            <label class="block text-lg font-semibold mb-2">
                 Descripción
             </label>
 
@@ -36,17 +25,17 @@
             </label>
 
             <select
-    [(ngModel)]="nuevoProducto.cod_proveedor"
-    name="cod_proveedor"
-    class="w-full border border-gray-300 rounded-xl p-4">
+            [(ngModel)]="nuevoProducto.cod_proveedor"
+            name="cod_proveedor"
+            class="w-full border border-gray-300 rounded-xl p-4">
 
-    <option value="">Seleccione un proveedor</option>
+    <option [ngValue]="0">Seleccione un proveedor</option>
 
     <option
         *ngFor="let proveedor of proveedores"
-        [value]="proveedor.cod_proveedor">
+        [ngValue]="proveedor.codigo_proveedor">
 
-        {{ proveedor.cod_proveedor }}
+        {{ proveedor.codigo_proveedor }}
 
     </option>
 

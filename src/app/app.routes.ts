@@ -62,7 +62,8 @@ export const routes: Routes = [
     path: 'fromcliente', component: Fromcliente
   },
   {
-    path: 'Actualizarproveedor', component: Actualizarproveedor
+    path: 'actualizarproveedor/:codigo_proveedor', 
+    component: Actualizarproveedor
   },
 
   {

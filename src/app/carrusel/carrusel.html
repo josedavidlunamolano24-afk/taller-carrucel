@@ -1,40 +1,146 @@
-<section class="contenedor">
+<div class="w-full px-[30px] py-[30px] font-sans">
 
-  <h2>Carrusel principal</h2>
+  <!-- TÍTULO -->
+  <h2 class="mb-5 text-2xl font-bold text-gray-800">
+    Carrusel principal
+  </h2>
 
-  <div class="carrusel">
 
-    <button class="flecha izquierda" (click)="anterior()">
+  <!-- ========================= -->
+  <!-- CARRUSEL -->
+  <!-- ========================= -->
+
+  <div class="flex w-full items-center gap-[15px]">
+
+    <!-- BOTÓN ANTERIOR -->
+    <button
+      type="button"
+      (click)="anterior()"
+      class="z-10 flex h-[45px] w-[45px] shrink-0
+             cursor-pointer items-center justify-center
+             rounded-full border-0 bg-white
+             text-[30px] text-gray-700
+             shadow-[0_2px_10px_#ccc]
+             transition-all duration-200
+             hover:scale-110 hover:bg-gray-100
+             active:scale-95"
+      aria-label="Tarjeta anterior"
+    >
       ‹
     </button>
 
-    <div class="carrusel-window">
-      <div class="cards" [style.transform]="getTransform()">
 
-        <div class="card" *ngFor="let item of tarjetasCarrusel">
-          <img [src]="item.imagen" [alt]="item.titulo">
-          <div class="fondo"></div>
-          <div class="contenido">
-            <h3>{{item.titulo}}</h3>
-            <p>{{item.descripcion}}</p>
+    <!-- VENTANA DEL CARRUSEL -->
+    <div class="w-full overflow-hidden py-[10px]">
+
+      <!-- CONTENEDOR DE TARJETAS -->
+      <div
+        class="flex w-full flex-nowrap gap-[15px]
+               transition-transform duration-500 ease-in-out"
+        [style.transform]="getTransform()"
+      >
+
+        <!-- TARJETAS -->
+        <div
+          *ngFor="let item of tarjetasCarrusel"
+          class="relative h-[340px]
+                 shrink-0
+                 overflow-hidden
+                 rounded-[20px]
+                 text-white
+                 shadow-lg"
+          style="flex: 0 0 calc((100% - 45px) / 4);"
+        >
+
+          <!-- IMAGEN -->
+          <img
+            [src]="item.imagen"
+            [alt]="item.titulo"
+            class="h-full w-full object-cover"
+          >
+
+          <!-- DEGRADADO -->
+          <div
+            class="absolute inset-0
+                   bg-gradient-to-t
+                   from-black/80
+                   via-black/20
+                   to-transparent"
+          ></div>
+
+
+          <!-- CONTENIDO -->
+          <div
+            class="absolute bottom-[25px]
+                   left-[30px] right-[20px]"
+          >
+
+            <h3
+              class="mb-[10px]
+                     text-[22px]
+                     font-bold
+                     leading-tight"
+            >
+              {{ item.titulo }}
+            </h3>
+
+            <p
+              class="text-[15px]
+                     leading-relaxed
+                     text-white/90"
+            >
+              {{ item.descripcion }}
+            </p>
+
           </div>
+
         </div>
 
       </div>
+
     </div>
 
-    <button class="flecha derecha" (click)="siguiente()">
+
+    <!-- BOTÓN SIGUIENTE -->
+    <button
+      type="button"
+      (click)="siguiente()"
+      class="z-10 flex h-[45px] w-[45px] shrink-0
+             cursor-pointer items-center justify-center
+             rounded-full border-0 bg-white
+             text-[30px] text-gray-700
+             shadow-[0_2px_10px_#ccc]
+             transition-all duration-200
+             hover:scale-110 hover:bg-gray-100
+             active:scale-95"
+      aria-label="Siguiente tarjeta"
+    >
+      ›
     </button>
 
   </div>
 
-  <!-- Indicadores de puntos (ahora genera solo los puntos de posiciones existentes) -->
-  <div class="puntos">
-    <span 
-      *ngFor="let p of totalPuntos; let i = index"
-      [class.activo]="i === slideActual"
-      (click)="irAlSlide(i)">
-    </span>
+
+  <!-- ========================= -->
+  <!-- PUNTOS -->
+  <!-- ========================= -->
+
+  <div class="my-5 flex justify-center gap-2">
+
+    <button
+      *ngFor="let punto of totalPuntos; let i = index"
+      type="button"
+      (click)="irAlSlide(i)"
+      class="h-3 w-3 cursor-pointer rounded-full
+             transition-all duration-300"
+      [ngClass]="
+        slideActual === i
+          ? 'scale-125 bg-indigo-600'
+          : 'bg-gray-300 hover:bg-gray-400'
+      "
+      [attr.aria-label]="'Ir al slide ' + (i + 1)"
+    ></button>
+
   </div>
 
-</section>
+</div>

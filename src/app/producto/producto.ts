@@ -47,9 +47,9 @@ export class Producto {
         }
       })
     }
-    eliminar(id:number){
+    eliminar(codigo:number){
 
-      this.http.delete('https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/producto?id=eq.'+id,
+      this.http.delete('https://srrpeanqjqfxtnuwhjez.supabase.co/rest/v1/producto?codigo_producto=eq.'+ codigo,
       {
         headers: {
           apikey: 'sb_publishable_qnp1xzi89N_0c2Yex-wbwQ_ddmCG28x',
@@ -58,8 +58,8 @@ export class Producto {
         }
       }
     ).subscribe({
-      next:(respuesta) => {
-        alert("Registro Eliminado " + respuesta+id)
+      next:( ) => {
+        alert("Registro Eliminado " )
         this.traerProductos();
         this.cdr.detectChanges();
 
