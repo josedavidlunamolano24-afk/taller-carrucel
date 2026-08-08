@@ -60,8 +60,19 @@ export class Cliente {
         alert("el cliente se elimino correctamente" +respuesta + "cod_cliente"+ cod_cliente);
         this.traerClientes();
         this.cdr.detectChanges();
+      },
+      error: (error) => {
+
+        console.error('ERROR AL ELIMINAR:', error);
+
+        alert(
+          'No se pudo eliminar el cliente. Código: ' +
+          cod_cliente
+        );
       }
-    })
+      
+    });
+    
 
   }
 
