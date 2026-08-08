@@ -1,188 +1,201 @@
-<!-- Sidebar -->
-<aside class="w-70 h-screen bg-white shadow-lg border-gray-200 fixed left-0 top-0 flex flex-col">
+<nav class="w-full bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
 
-    <!-- Logo -->
-    <div class="flex items-center gap-3 p-6 border-gray-200 border-b">
-        <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwNtCUn0WAw4SIhy-qju85kdY4ESYxfRqu76qfdrpQsw&s=10"
-            class="w-10 h-10 rounded-full border-2 border-indigo-600">
+    <div class="flex items-center justify-between px-6 py-3">
 
-        <span class="text-xl font-bold text-indigo-600">
-            Sidebar y Carrusel
-        </span>
+    
+        <div class="flex items-center gap-3">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwNtCUn0WAw4SIhy-qju85kdY4ESYxfRqu76qfdrpQsw&s=10"
+                class="w-10 h-10 rounded-full border-2 border-indigo-600"
+            >
+
+            <span class="text-xl font-bold text-indigo-600">
+                Sidebar y Carrusel
+            </span>
+
+        </div>
+
+
+        <div class="flex items-center gap-2">
+
+
+            <a
+                routerLink="/"
+                routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition"
+            >
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+
+
+            <details class="group relative">
+
+                <summary
+                    routerLink="/detalle-factura"
+                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
+                >
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                    Detalle Facturas
+
+                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+
+                </summary>
+
+
+                <!-- submenu -->
+                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all duration-200">
+
+                    <a
+                        routerLink="/detalle-factura/registrar"
+                        class="block px-3 py-2 rounded hover:bg-indigo-100">
+                        Registrar
+                    </a>
+
+                </div>
+
+            </details>
+
+
+            <details class="group relative">
+
+                <summary
+                    routerLink="/producto"
+                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
+                >
+
+                    <i class="fa-solid fa-box"></i>
+
+                    Producto
+
+                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+
+                </summary>
+
+
+                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all duration-200">
+
+                    <a
+                        routerLink="/formproducto"
+                        class="block px-3 py-2 rounded hover:bg-indigo-100">
+                        Registrar producto
+                    </a>
+
+
+                </div>
+
+            </details>
+
+
+            <details class="group relative">
+
+                <summary
+                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
+                >
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    Factura
+
+                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+
+                </summary>
+
+
+                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all duration-200">
+
+                    <a
+                        routerLink="/factura/registrar"
+                        class="block px-3 py-2 rounded hover:bg-indigo-100">
+                        Registrar
+                    </a>
+
+                </div>
+
+            </details>
+
+            <details class="group relative">
+
+                <summary
+                    routerLink="/proveedor"
+                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
+                >
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Proveedor
+
+                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+
+                </summary>
+
+
+                <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all duration-200">
+
+                    <a
+                        routerLink="/formproveedor"
+                        routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                        class="block px-3 py-2 rounded hover:bg-indigo-100"
+                    >
+                        Registrar proveedor
+                    </a>
+
+                </div>
+
+            </details>
+
+
+            <details class="group relative">
+
+                <summary
+                    routerLink="/cliente"
+                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
+                >
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Cliente
+
+                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+
+                </summary>
+
+
+                <div class="absolute top-full right-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all duration-200">
+
+                    <a
+                        routerLink="/fromcliente"
+                        routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                        class="block px-3 py-2 rounded hover:bg-indigo-100"
+                    >
+                        Registrar cliente
+                    </a>
+
+                </div>
+
+            </details>
+
+        </div>
+
     </div>
 
-    <!-- Menú -->
-    <nav class="flex flex-col p-4 gap-2 overflow-y-auto">
-
-        <!-- Inicio -->
-        <a
-            routerLink=""
-            routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 transition">
-
-            <i class="fa-solid fa-house"></i>
-            Inicio
-
-        </a>
-
-        <!-- Detalle Facturas -->
-        <details class="group">
-
-            <summary
-                routerLink="/detalle-factura"
-                routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-                class="flex items-center justify-between cursor-pointer p-3 rounded-lg hover:bg-gray-100">
-
-                <span class="flex items-center gap-3">
-                    <i class="fa-solid fa-file-invoice"></i>
-                    Detalle Facturas
-                </span>
-
-                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-            </summary>
-
-            <div class="ml-8 mt-2 flex flex-col gap-1">
-
-                <a routerLink="/detalle-factura/registrar"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Registrar
-                </a>
-
-                <a routerLink="/detalle-factura/factura"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Factura
-                </a>
-
-            </div>
-
-        </details>
-
-        <!-- Producto -->
-        <details class="group">
-
-            <summary
-                routerLink="/producto"
-                routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-                class="flex items-center justify-between cursor-pointer p-3 rounded-lg hover:bg-gray-100">
-
-                <span class="flex items-center gap-3">
-                    <i class="fa-solid fa-box"></i>
-                    Producto
-                </span>
-
-                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-            </summary>
-
-            <div class="ml-8 mt-2 flex flex-col gap-1">
-
-                <a routerLink="/formproducto"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Registrar producto
-                </a>
-
-                <a routerLink="/producto/factura"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Factura
-                </a>
-
-            </div>
-
-        </details>
-
-        <!-- Factura -->
-        <details class="group">
-
-            <summary
-                class="flex items-center justify-between cursor-pointer p-3 rounded-lg hover:bg-gray-100">
-
-                <span class="flex items-center gap-3">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    Factura
-                </span>
-
-                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-            </summary>
-
-            <div class="ml-8 mt-2 flex flex-col gap-1">
-
-                <a routerLink="/factura/registrar"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Registrar
-                </a>
-
-                <a routerLink="/factura/factura"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Factura
-                </a>
-
-            </div>
-
-        </details>
-<!--proveedor-->
- <details class="group">
-
-            <summary
-            routerLink="/proveedor"
-            routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-
-                class="flex items-center justify-between cursor-pointer p-3 rounded-lg hover:bg-gray-100">
-
-                <span class="flex items-center gap-3">
-                    <i class="fa-solid fa-user"></i>
-                    Proveedor
-                </span>
-
-                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-            </summary>
-
-            <div class="ml-8 mt-2 flex flex-col gap-1">
-
-                <a routerLink="/formproveedor"
-                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Registrar proveedor
-                </a>
-
-            </div>
-
-        </details>
-
-        <!-- Cliente -->
-        <details class="group">
-
-            <summary
-            routerLink="/cliente"
-            routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-
-                class="flex items-center justify-between cursor-pointer p-3 rounded-lg hover:bg-gray-100">
-
-                <span class="flex items-center gap-3">
-                    <i class="fa-solid fa-user"></i>
-                    Cliente
-                </span>
-
-                <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-            </summary>
-
-            <div class="ml-8 mt-2 flex flex-col gap-1">
-
-                <a routerLink="/fromcliente"
-                    routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
-                    class="p-2 rounded hover:bg-indigo-100">
-                    Registrar cliente 
-                </a>
-
-            </div>
-
-        </details>
-
-    </nav>
-
-</aside>
+</nav>
