@@ -64,7 +64,7 @@
 
     <app-actualizarproducto
     *ngIf="productoSeleccionado"
-    [producto]="productoSeleccionado">
+    [producto]="productoSeleccionado"
     (cerrar)="cerrarActualizar()"
     (actualizado)="productoActualizado()">
     </app-actualizarproducto>
