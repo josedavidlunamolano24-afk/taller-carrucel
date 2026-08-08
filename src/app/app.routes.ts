@@ -59,6 +59,18 @@ export const routes: Routes = [
     path: 'formproveedor',
     component: Formproveedor
   },
+  {
+    path: 'formproducto',
+    component: Formproducto
+  },
+  {
+    path: 'formcliente',
+    component: Fromcliente
+  },
+  {
+    path: 'actualizarcliente/:cod_cliente',
+    component: Actualizarcliente
+  }
 
 
-]; 
+];
