@@ -1,0 +1,146 @@
+<div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl p-8">
+
+        <!-- Título -->
+
+        <h2 class="text-3xl font-bold text-indigo-600 text-center mb-8">
+            Actualizar Producto
+        </h2>
+
+
+        <form
+            (ngSubmit)="actualizarProducto()"
+            class="space-y-5">
+
+
+            <!-- Código Producto -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Código Producto
+                </label>
+
+                <input
+                    type="number"
+                    [(ngModel)]="producto.codigo_producto"
+                    name="codigo_producto"
+                    readonly
+                    class="w-full border border-gray-300 rounded-xl p-3 bg-gray-100">
+
+            </div>
+
+
+            <!-- Descripción -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Descripción
+                </label>
+
+                <input
+                    type="text"
+                    [(ngModel)]="producto.descripcion"
+                    name="descripcion"
+                    class="w-full border border-gray-300 rounded-xl p-3">
+
+            </div>
+
+
+            <!-- Código Proveedor -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Código Proveedor
+                </label>
+
+                <input
+                    type="number"
+                    [(ngModel)]="producto.cod_proveedor"
+                    name="cod_proveedor"
+                    class="w-full border border-gray-300 rounded-xl p-3">
+
+            </div>
+
+
+            <!-- Precio Costo -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Precio Costo
+                </label>
+
+                <input
+                    type="number"
+                    [(ngModel)]="producto.precio_costo"
+                    name="precio_costo"
+                    class="w-full border border-gray-300 rounded-xl p-3">
+
+            </div>
+
+
+            <!-- Precio Venta -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Precio Venta
+                </label>
+
+                <input
+                    type="number"
+                    [(ngModel)]="producto.precio_venta"
+                    name="precio_venta"
+                    class="w-full border border-gray-300 rounded-xl p-3">
+
+            </div>
+
+
+            <!-- Foto -->
+
+            <div>
+
+                <label class="block text-lg font-semibold mb-2">
+                    Foto
+                </label>
+
+                <input
+                    type="text"
+                    [(ngModel)]="producto.foto"
+                    name="foto"
+                    class="w-full border border-gray-300 rounded-xl p-3">
+
+            </div>
+
+
+            <!-- Botones -->
+
+            <div class="flex justify-end gap-4 pt-4">
+
+                <button
+                    type="button"
+                    class="bg-gray-300 hover:bg-gray-400 px-6 py-3 rounded-xl">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl">
+
+                    Actualizar
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
