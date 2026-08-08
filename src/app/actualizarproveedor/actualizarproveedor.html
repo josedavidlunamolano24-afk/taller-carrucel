@@ -1,0 +1,12 @@
+<h1>Actualizar proveedor</h1>
+<form (ngSubmit)="actualizarproveedor()">
+    <!-- no pueden llevar placeholder los input porque traen la lista entonces solo van con name y el [(ngModel)]  -->
+    <input name="nombre" [(ngModel)]="proveedor.nombre_proveedor">
+    <input name="telefono" [(ngModel)]="proveedor.telefono">
+    <input name="direccion" [(ngModel)]="proveedor.direccion">
+    
+    
+    <button type="submit">actualizarproveedoor</button>
+
+    <!-- el id vien de listar-->
+</form>

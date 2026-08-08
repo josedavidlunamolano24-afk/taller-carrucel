@@ -61,4 +61,11 @@
 
         </tbody>
     </table>
+
+    <app-actualizarproducto
+    *ngIf="productoSeleccionado"
+    [producto]="productoSeleccionado">
+    (cerrar)="cerrarActualizar()"
+    (actualizado)="productoActualizado()">
+    </app-actualizarproducto>
 </div>

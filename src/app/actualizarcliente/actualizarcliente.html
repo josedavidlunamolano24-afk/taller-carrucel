@@ -1,22 +1,25 @@
 <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
 
     <h2 class="text-3xl font-bold text-indigo-600 mb-8 text-center">
-        Actualizar clientes
+        Actualizar cliente
     </h2>
 
-    <form (ngSubmit)="actualizarClient" class="space-y-6">
+    <form (ngSubmit)="actualizarClient()" class="space-y-6">
 
 
-       
         <div>
             <label class="block text-gray-700 font-semibold mb-2">
-                Nit
+                NIT
             </label>
 
             <input
-                name="nit"
+                type="text"
+                placeholder="Ingrese el NIT"
                 [(ngModel)]="client.nit"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                name="nit"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
         </div>
 
         <div>
@@ -25,40 +28,50 @@
             </label>
 
             <input
-                name="nombre"
+                type="text"
+                placeholder="Ingrese el nombre"
                 [(ngModel)]="client.nombre"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                name="nombre"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
-    
         <div>
             <label class="block text-gray-700 font-semibold mb-2">
-                Telefono
+                Teléfono
             </label>
 
             <input
-                name="telefono"
+                type="text"
+                placeholder="Ingrese el teléfono"
                 [(ngModel)]="client.telefono"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                name="telefono"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
+
 
         <div>
             <label class="block text-gray-700 font-semibold mb-2">
-                Direccion
+                Dirección
             </label>
 
             <input
-                name="direccion"
+                type="text"
+                placeholder="Ingrese la dirección"
                 [(ngModel)]="client.direccion"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                name="direccion"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
-        
         <div class="flex justify-end gap-4 pt-4">
+
 
             <button
                 type="submit"
-                class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition">
+                class="px-6 py-3 bg-indigo-600 text-white rounded-lg
+                    font-semibold hover:bg-indigo-700 transition">
                 Actualizar cliente
             </button>
 

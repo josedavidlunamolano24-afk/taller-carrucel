@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Cliente } from './cliente/cliente';
-import { Proveedor } from './proveedor/proveedor';
 import { Producto } from './producto/producto';
 import { Inicio } from './inicio/inicio';
 import { DetalleFactura } from './detalle-factura/detalle-factura';
@@ -8,8 +7,10 @@ import { Factura } from './factura/factura';
 import { Formproveedor } from './formproveedor/formproveedor';
 import { Carrusel } from './carrusel/carrusel';
 import { Formproducto } from './formproducto/formproducto';
-import { Fromcliente } from './fromcliente/fromcliente';
 import { Actualizarcliente } from './actualizarcliente/actualizarcliente';
+import { Actualizarproveedor } from './actualizarproveedor/actualizarproveedor';
+import { Fromcliente } from './fromcliente/fromcliente';
+import { Proveedor } from './proveedor/proveedor';
 
 
 export const routes: Routes = [
@@ -36,11 +37,6 @@ export const routes: Routes = [
   },
 
   {
-    path: 'proveedor',
-    component: Proveedor
-  },
-
-  {
     path: 'producto',
     component: Producto
   },
@@ -54,11 +50,28 @@ export const routes: Routes = [
     path: 'detalle-factura',
     component: DetalleFactura
   },
-
   {
-    path: 'formproveedor',
-    component: Formproveedor
+    path: 'formproducto',
+    component: Formproducto
+  },
+  {
+    path: 'actualizarcliente/:cod_cliente',
+    component: Actualizarcliente
+  },
+  {
+    path: 'fromcliente', component: Fromcliente
+  },
+  {
+    path: 'Actualizarproveedor', component: Actualizarproveedor
   },
 
+  {
+    path: 'formproveedor', component: Formproveedor
+  },
+  {
+    path: 'proveedor', component: Proveedor
+  }
+  
 
-]; 
+];
+
