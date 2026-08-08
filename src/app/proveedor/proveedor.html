@@ -1,91 +1,45 @@
-
 <div class="mx-5 mt-5 bg-white shadow-md rounded-lg p-6 overflow-x-auto">
 
+  <h2 class="text-2xl font-bold text-indigo-600 mb-6">Gestión de Proveedores</h2>
 
-    <h2 class="text-2xl font-bold text-indigo-600 mb-6">
+  <table class="w-full table-auto border border-gray-200 rounded-lg overflow-hidden">
+    <thead class="bg-indigo-100 text-indigo-600">
+      <tr>
+        <th class="p-3 border">Código de proveedor</th>
+        <th class="p-3 border">Nombre</th>
+        <th class="p-3 border">Teléfono</th>
+        <th class="p-3 border">Dirección</th>
+      </tr>
+    </thead>
 
-    </h2>
+    <tbody>
+      <tr *ngFor="let p of proveedores" class="h-12 hover:bg-gray-50">
+        <td class="border p-3 text-center">{{ p.id }}</td>
+        <td class="border p-3">{{ p.nombre_proveedor }}</td>
+        <td class="border p-3">{{ p.telefono }}</td>
+        <td class="border p-3">{{ p.direccion }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <input type="text">
+  <div class="flex flex-row justify-center gap-4 mt-6">
+    <button
+      routerLink="/formproveedor"
+      class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">
+      Registrar proveedor
+    </button>
 
-    <table class="w-full table-auto border border-gray-200 rounded-lg overflow-hidden">
+    <button
+      routerLink="/actualizarproveedor"
+      class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition font-medium">
+      Actualizar proveedor
+    </button>
 
-        <thead class="bg-indigo-100 text-indigo-600">
-            <tr>
-                <th class="p-3 border">Código de proveedor</th>
-                <th class="p-3 border">Nombre</th>
-                <th class="p-3 border">Teléfono</th>
-                <th class="p-3 border">Dirección</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr class="h-12">
-        
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-
-            <tr class="h-12">
-               
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-
-            <tr class="h-12">
-            
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-        </tbody>
-        <div class="flex flex-row items-center gap-4 mt-6 whitespace-nowrap overflow-x-auto">
-        <button
-            routerLink="/formproveedor"
-            class="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition">
-            Registrar proveedor
-        </button>
-
-        <button 
-    class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition font-medium">
-    Actualizar proveedor
-  </button>
-
-  <button 
-    class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition font-medium">
-    Eliminar proveedor
-  </button>
+    <button
+      (click)="eliminarProveedor()"
+      class="px-6 py-3 rounded-lg bg-red-600 text-white hover:bg-red-700 transition font-medium">
+      Eliminar proveedor
+    </button>
   </div>
-
-
-
-    </table>
-
 
 </div>
