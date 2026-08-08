@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarruselService, TarjetaCarrusel } from '../carrusel.service';
 
+//En las importaciones lo que se esta haciendo es traer el manejo del carrusel por medio de "carruselservice"
+//y con tarjetaCarrusel lo que se hace es traer la interfaz de la tarjeta para poder usarla en el componente del carrusel.
+
 @Component({
   selector: 'app-carrusel',
   standalone: true,
@@ -25,11 +28,12 @@ export class Carrusel implements OnInit {
   constructor(private carruselService: CarruselService) {}
 
   ngOnInit() {
-    // Escucha en tiempo real si agregas, editas o borras tarjetas desde el Admin
+    // Esta parte es la encargada de detectar los cambios se que quieren hacer 
+    // (agregar,editar,eliminar) y actualizar el carrusel en tiempo real  
     this.carruselService.getTarjetas$().subscribe(data => {
       this.tarjetasCarrusel = data;
 
-      // Reajusta la posición si se eliminan tarjetas y quedamos fuera de rango
+      // Reajusta la posición si se eliminan tarjetas
       if (this.slideActual > this.maxSlide) {
         this.slideActual = this.maxSlide;
       }

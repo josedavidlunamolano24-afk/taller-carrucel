@@ -19,31 +19,31 @@ export class CarruselService {
     {
       id: 1,
       imagen: 'carrusel/productosprincipal.jpg',
-      titulo: 'Control total de tus facturas',
+      titulo: 'Imagen 1',
       descripcion: 'Administra, consulta y lleva el control de todas tus facturas en un solo lugar.'
     },
     {
       id: 2,
       imagen: 'carrusel/brillo.jpg',
-      titulo: 'Gestión de productos',
+      titulo: 'Imagen 2',
       descripcion: 'Organiza tu inventario y mantén tus productos siempre al día.'
     },
     {
       id: 3,
       imagen: 'carrusel/dentro.jpg',
-      titulo: 'Proveedores y clientes siempre conectados',
+      titulo: 'Imagen 3',
       descripcion: 'Gestiona tu red de contactos y fortalece tus relaciones comerciales.'
     },
     {
       id: 4,
       imagen: 'carrusel/llantas.jpg',
-      titulo: 'Reportes que toman decisiones',
+      titulo: 'Imagen 4',
       descripcion: 'Visualiza reportes y estadísticas para tomar mejores decisiones.'
     },
     {
       id: 5,
       imagen: 'carrusel/rayones.jpg',
-      titulo: 'Cratches Remover',
+      titulo: 'Imagen 5',
       descripcion: 'Quita de tu vehículo los rayones y arañazos y vuélvelo a dejar como NUEVO.'
     }
   ];
