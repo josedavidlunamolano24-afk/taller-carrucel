@@ -20,25 +20,25 @@ export class CarruselService {
       id: 1,
       imagen: 'carrusel/productosprincipal.jpg',
       titulo: 'Imagen 1',
-      descripcion: 'Administra, consulta y lleva el control de todas tus facturas en un solo lugar.'
+      descripcion: 'Calidad y buen servicio con todos nuestros servicios.'
     },
     {
       id: 2,
       imagen: 'carrusel/brillo.jpg',
       titulo: 'Imagen 2',
-      descripcion: 'Organiza tu inventario y mantén tus productos siempre al día.'
+      descripcion: 'Dale brillo por muy viejo que este.'
     },
     {
       id: 3,
       imagen: 'carrusel/dentro.jpg',
       titulo: 'Imagen 3',
-      descripcion: 'Gestiona tu red de contactos y fortalece tus relaciones comerciales.'
+      descripcion: 'la vida de tu pasta es como la de tu lamina.'
     },
     {
       id: 4,
       imagen: 'carrusel/llantas.jpg',
       titulo: 'Imagen 4',
-      descripcion: 'Visualiza reportes y estadísticas para tomar mejores decisiones.'
+      descripcion: 'Porque las llantas tambien lo merecen.'
     },
     {
       id: 5,
