@@ -11,6 +11,7 @@ import { Actualizarcliente } from './actualizarcliente/actualizarcliente';
 import { Actualizarproveedor } from './actualizarproveedor/actualizarproveedor';
 import { Fromcliente } from './fromcliente/fromcliente';
 import { Proveedor } from './proveedor/proveedor';
+import {RegistrarFactura} from './registrar-factura/registrar-factura';
 
 
 export const routes: Routes = [
@@ -71,6 +72,10 @@ export const routes: Routes = [
   },
   {
     path: 'proveedor', component: Proveedor
+  },
+  {
+    path: 'registrar-factura',
+   component: RegistrarFactura
   }
   
 

@@ -2,7 +2,7 @@
 
     <div class="flex items-center justify-between px-6 py-3">
 
-    
+        <!-- LOGO / TITULO -->
         <div class="flex items-center gap-3">
 
             <img
@@ -17,20 +17,30 @@
         </div>
 
 
+        <!-- MENU -->
         <div class="flex items-center gap-2">
 
+            <!-- ========================= -->
+            <!-- INICIO -->
+            <!-- ========================= -->
 
             <a
-                routerLink="/"
+                routerLink="/inicio"
                 routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition"
             >
+
                 <i class="fa-solid fa-house"></i>
+
                 Inicio
+
             </a>
 
 
+            <!-- ========================= -->
+            <!-- DETALLE FACTURAS -->
+            <!-- ========================= -->
 
             <details class="group relative">
 
@@ -44,19 +54,25 @@
 
                     Detalle Facturas
 
-                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+                    <i
+                        class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"
+                    ></i>
 
                 </summary>
 
 
-                <!-- submenu -->
-                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
-                group-hover:opacity-100 group-hover:visible
-                transition-all duration-200">
+                <!-- SUBMENU -->
+
+                <div
+                    class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-200"
+                >
 
                     <a
                         routerLink="/detalle-factura/registrar"
-                        class="block px-3 py-2 rounded hover:bg-indigo-100">
+                        class="block px-3 py-2 rounded hover:bg-indigo-100"
+                    >
                         Registrar
                     </a>
 
@@ -64,6 +80,10 @@
 
             </details>
 
+
+            <!-- ========================= -->
+            <!-- PRODUCTO -->
+            <!-- ========================= -->
 
             <details class="group relative">
 
@@ -77,55 +97,53 @@
 
                     Producto
 
-                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+                    <i
+                        class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"
+                    ></i>
 
                 </summary>
 
 
-                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
-                group-hover:opacity-100 group-hover:visible
-                transition-all duration-200">
+                <!-- SUBMENU -->
+
+                <div
+                    class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-200"
+                >
 
                     <a
                         routerLink="/formproducto"
-                        class="block px-3 py-2 rounded hover:bg-indigo-100">
+                        class="block px-3 py-2 rounded hover:bg-indigo-100"
+                    >
                         Registrar producto
                     </a>
 
-
                 </div>
 
             </details>
 
 
-            <details class="group relative">
+            <!-- ========================= -->
+            <!-- FACTURA -->
+            <!-- ========================= -->
 
-                <summary
-                    class="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-100 list-none"
-                >
+            <a
+                routerLink="/factura"
+                routerLinkActive="bg-indigo-100 text-indigo-600 font-bold"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-indigo-100 transition"
+            >
 
-                    <i class="fa-solid fa-calendar-days"></i>
+                <i class="fa-solid fa-calendar-days"></i>
 
-                    Factura
+                Factura
 
-                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-
-                </summary>
+            </a>
 
 
-                <div class="absolute top-full left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
-                group-hover:opacity-100 group-hover:visible
-                transition-all duration-200">
-
-                    <a
-                        routerLink="/factura/registrar"
-                        class="block px-3 py-2 rounded hover:bg-indigo-100">
-                        Registrar
-                    </a>
-
-                </div>
-
-            </details>
+            <!-- ========================= -->
+            <!-- PROVEEDOR -->
+            <!-- ========================= -->
 
             <details class="group relative">
 
@@ -139,14 +157,20 @@
 
                     Proveedor
 
-                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+                    <i
+                        class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"
+                    ></i>
 
                 </summary>
 
 
-                <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
-                group-hover:opacity-100 group-hover:visible
-                transition-all duration-200">
+                <!-- SUBMENU -->
+
+                <div
+                    class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-200"
+                >
 
                     <a
                         routerLink="/formproveedor"
@@ -161,6 +185,10 @@
             </details>
 
 
+            <!-- ========================= -->
+            <!-- CLIENTE -->
+            <!-- ========================= -->
+
             <details class="group relative">
 
                 <summary
@@ -173,14 +201,20 @@
 
                     Cliente
 
-                    <i class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"></i>
+                    <i
+                        class="fa-solid fa-chevron-down text-xs group-open:rotate-180 transition"
+                    ></i>
 
                 </summary>
 
 
-                <div class="absolute top-full right-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
-                group-hover:opacity-100 group-hover:visible
-                transition-all duration-200">
+                <!-- SUBMENU -->
+
+                <div
+                    class="absolute top-full right-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg p-2 opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-200"
+                >
 
                     <a
                         routerLink="/fromcliente"

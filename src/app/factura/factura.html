@@ -1,69 +1,116 @@
-<h1>Factura</h1>
-
 <div class="mx-5 mt-5 bg-white shadow-md rounded-lg p-6">
 
-    <h2 class="text-2xl font-bold text-indigo-600 mb-6">
-        Facturas
+  <!-- ENCABEZADO -->
+  <div class="flex justify-between items-center mb-5">
+
+    <h2 class="text-2xl font-bold">
+      Facturas
     </h2>
+
+    <!-- BOTÓN REGISTRAR FACTURA -->
+    <a
+      routerLink="/registrar-factura"
+      class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      Registrar factura
+    </a>
+
+  </div>
+
+
+  <!-- CARGANDO -->
+  <div
+    *ngIf="cargando"
+    class="text-center py-5"
+  >
+    Cargando facturas...
+  </div>
+
+
+  <!-- ERROR -->
+  <div
+    *ngIf="error"
+    class="bg-red-100 text-red-700 p-3 rounded-lg mb-4"
+  >
+    {{ error }}
+  </div>
+
+
+  <!-- TABLA -->
+  <div
+    *ngIf="!cargando"
+    class="overflow-x-auto"
+  >
 
     <table class="w-full border border-gray-200 rounded-lg overflow-hidden">
 
-        <thead class="bg-indigo-100 text-indigo-600">
-            <tr>
-                <th class="p-3 border">No. Factura</th>
-                <th class="p-3 border">Fecha</th>
-                <th class="p-3 border">Código Cliente</th>
-                <th class="p-3 border">Total Factura</th>
-            </tr>
-        </thead>
+      <thead class="bg-gray-100">
 
-        <tbody>
+        <tr>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+          <th class="p-3 border text-left">
+            No. Factura
+          </th>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+          <th class="p-3 border text-left">
+            Fecha
+          </th>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+          <th class="p-3 border text-left">
+            Código Cliente
+          </th>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+          <th class="p-3 border text-left">
+            Total Factura
+          </th>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+        </tr>
 
-            <tr class="h-12">
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+      </thead>
 
-        </tbody>
+
+      <tbody>
+
+        <tr
+          *ngFor="let factura of facturas"
+          class="hover:bg-gray-50"
+        >
+
+          <td class="p-3 border">
+            {{ factura.no_factura }}
+          </td>
+
+          <td class="p-3 border">
+            {{ factura.fecha | date:'dd/MM/yyyy' }}
+          </td>
+
+          <td class="p-3 border">
+            {{ factura.cod_cliente }}
+          </td>
+
+          <td class="p-3 border">
+            {{ factura.total_factura | number:'1.2-2' }}
+          </td>
+
+        </tr>
+
+
+        <!-- SIN FACTURAS -->
+        <tr *ngIf="facturas.length === 0">
+
+          <td
+            colspan="4"
+            class="p-5 text-center text-gray-500"
+          >
+            No hay facturas registradas.
+          </td>
+
+        </tr>
+
+      </tbody>
 
     </table>
-    
+
+  </div>
 
 </div>
