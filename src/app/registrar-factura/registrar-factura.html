@@ -1,5 +1,6 @@
 <div class="max-w-3xl mx-auto mt-8 bg-white shadow-md rounded-lg p-6">
 
+  <!-- ENCABEZADO -->
   <div class="mb-6">
 
     <h2 class="text-2xl font-bold text-gray-800">
@@ -12,11 +13,29 @@
 
   </div>
 
+  <!-- MENSAJE DE ÉXITO -->
+  <div
+    *ngIf="mensaje"
+    class="bg-green-100 text-green-700 p-3 rounded-lg mb-4"
+  >
+    {{ mensaje }}
+  </div>
 
-  <form class="space-y-5">
+  <!-- MENSAJE DE ERROR -->
+  <div
+    *ngIf="error"
+    class="bg-red-100 text-red-700 p-3 rounded-lg mb-4"
+  >
+    {{ error }}
+  </div>
+
+  <!-- FORMULARIO -->
+  <form
+    class="space-y-5"
+    (ngSubmit)="guardarFactura()"
+  >
 
     <!-- FECHA -->
-
     <div>
 
       <label
@@ -30,14 +49,14 @@
         id="fecha"
         type="date"
         name="fecha"
+        [(ngModel)]="factura.fecha"
+        required
         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
 
     </div>
 
-
     <!-- CLIENTE -->
-
     <div>
 
       <label
@@ -51,16 +70,16 @@
         id="cod_cliente"
         type="number"
         name="cod_cliente"
+        [(ngModel)]="factura.cod_cliente"
         min="1"
+        required
         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Ej: 1"
       >
 
     </div>
 
-
     <!-- TOTAL -->
-
     <div>
 
       <label
@@ -74,17 +93,17 @@
         id="total_factura"
         type="number"
         name="total_factura"
+        [(ngModel)]="factura.total_factura"
         min="0"
         step="0.01"
+        required
         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Ej: 80000"
       >
 
     </div>
 
-
     <!-- BOTONES -->
-
     <div class="flex justify-end gap-3 pt-4">
 
       <a
@@ -96,9 +115,10 @@
 
       <button
         type="submit"
-        class="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+        [disabled]="cargando"
+        class="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:bg-gray-400"
       >
-        Guardar factura
+        {{ cargando ? 'Guardando...' : 'Guardar factura' }}
       </button>
 
     </div>

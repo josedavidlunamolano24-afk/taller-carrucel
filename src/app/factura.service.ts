@@ -9,6 +9,12 @@ export interface Factura {
   total_factura: number;
 }
 
+export interface NuevaFactura {
+  fecha: string;
+  cod_cliente: number;
+  total_factura: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,10 +34,21 @@ export class FacturaService {
     'Content-Type': 'application/json'
   });
 
+  // OBTENER FACTURAS
   obtenerFacturas(): Observable<Factura[]> {
-
     return this.http.get<Factura[]>(
       this.url,
+      {
+        headers: this.headers
+      }
+    );
+  }
+
+  // REGISTRAR FACTURA
+  registrarFactura(factura: NuevaFactura): Observable<any> {
+    return this.http.post(
+      this.url,
+      factura,
       {
         headers: this.headers
       }
